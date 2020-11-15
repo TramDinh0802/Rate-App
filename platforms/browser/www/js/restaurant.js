@@ -1,81 +1,81 @@
 const listRes = [{
-        res_name: 'Restaurant demo',
+        res_name: 'Sugar daddy 1',
         res_type: 'Demo',
         res_datetime: 'abc',
         res_averageprice: '300000',
-        res_rating: 'good',
-        res_clean: 'good',
-        res_food: 'good',
+        res_service: '5',
+        res_clean: '5',
+        res_food: '5',
         res_notes: ''
     },
     {
-        res_name: 'Restaurant demo',
+        res_name: 'Sugar daddy 2',
         res_type: 'Demo',
         res_datetime: 'abc',
         res_averageprice: '300000',
-        res_rating: 'good',
-        res_clean: 'good',
-        res_food: 'good',
+        res_service: '5',
+        res_clean: '5',
+        res_food: '5',
         res_notes: ''
     },
     {
-        res_name: 'Restaurant demo',
+        res_name: 'Sugar daddy 3',
         res_type: 'Demo',
         res_datetime: 'abc',
         res_averageprice: '300000',
-        res_rating: 'good',
-        res_clean: 'good',
-        res_food: 'good',
+        res_service: '5',
+        res_clean: '5',
+        res_food: '5',
         res_notes: ''
     },
     {
-        res_name: 'Restaurant demo',
+        res_name: 'Sugar daddy 4',
         res_type: 'Demo',
         res_datetime: 'abc',
         res_averageprice: '300000',
-        res_rating: 'good',
-        res_clean: 'good',
-        res_food: 'good',
+        res_service: '5',
+        res_clean: '5',
+        res_food: '5',
         res_notes: ''
     },
     {
-        res_name: 'Restaurant demo',
+        res_name: 'Sugar daddy 5',
         res_type: 'Demo',
         res_datetime: 'abc',
         res_averageprice: '300000',
-        res_rating: 'good',
-        res_clean: 'good',
-        res_food: 'good',
+        res_service: '5',
+        res_clean: '5',
+        res_food: '5',
         res_notes: ''
     },
     {
-        res_name: 'Restaurant demo',
+        res_name: 'Sugar daddy 6',
         res_type: 'Demo',
         res_datetime: 'abc',
         res_averageprice: '300000',
-        res_rating: 'good',
-        res_clean: 'good',
-        res_food: 'good',
+        res_service: '5',
+        res_clean: '5',
+        res_food: '5',
         res_notes: ''
     },
     {
-        res_name: 'Restaurant demo',
+        res_name: 'Sugar daddy 7',
         res_type: 'Demo',
         res_datetime: 'abc',
         res_averageprice: '300000',
-        res_rating: 'good',
-        res_clean: 'good',
-        res_food: 'good',
+        res_service: '5',
+        res_clean: '5',
+        res_food: '5',
         res_notes: ''
     },
     {
-        res_name: 'Restaurant demo',
+        res_name: 'Sugar daddy 8',
         res_type: 'Demo',
         res_datetime: 'abc',
         res_averageprice: '300000',
-        res_rating: 'good',
-        res_clean: 'good',
-        res_food: 'good',
+        res_service: '5',
+        res_clean: '5',
+        res_food: '5',
         res_notes: ''
     }
 ]
@@ -100,4 +100,14 @@ function getAllData(collectionName) {
     const objectStore = transaction.objectStore(collectionName);
     request = objectStore.getAll();
     return request;
+}
+
+function createFeedback(collectionName, feedback) {
+    const request = db.transaction([collectionName], "readwrite").objectStore(collectionName).add(feedback)
+    request.onsuccess = function() {
+        alert("Create feedback successfully")
+    }
+    request.onerror = function() {
+        alert("create feedback fail")
+    }
 }

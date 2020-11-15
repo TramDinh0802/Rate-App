@@ -306,3 +306,16 @@ a:hover {
 ul li ul li a {
     transition: all 0.5s ease;
 }
+
+
+/*Feedback*/
+
+form {
+    width: 100%;
+    margin: 20px auto;
+    background: #efefef;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+}

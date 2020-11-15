@@ -24,34 +24,36 @@
 </head>
 
 <body>
-    <div class="header-wrap">
+    <div data-role="page" id="home">
+        <div class="header-wrap">
 
-        <!--Banner-->
-        <section id="banner">
-            <div class="inner">
-                <h1>Hey, Rate Me</h1>
-                <p>Rate Me Make Me Better</p>
+            <!--Banner-->
+            <section id="banner">
+                <div class="inner">
+                    <h1>Hey, Rate Me</h1>
+                    <p>Rate Me Make Me Better</p>
+                </div>
+            </section>
+            <!--End Header-->
+
+            <!--Narbar-->
+            <div>
+                <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
+
+                <nav role="navigation" class="primary-navigation">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                        <li><a href="#">Restaurant</a></li>
+                    </ul>
+                </nav>
             </div>
-        </section>
-        <!--End Header-->
+            <!--End Narbar-->
 
-        <!--Narbar-->
-        <div>
-            <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
-
-            <nav role="navigation" class="primary-navigation">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Feedback</a></li>
-                    <li><a href="#">Restaurant</a></li>
-                </ul>
-            </nav>
+            <!--Search-->
+            <ul class="search" data-role="listview" data-filter="true" data-filter-placeholder="Find restaurant..." data-filter-theme="a" data-inset="true" id="list_data">
+            </ul>
         </div>
-        <!--End Narbar-->
-
-        <!--Search-->
-        <ul data-role="listview" data-filter="true" data-filter-placeholder="Find restaurant..." data-filter-theme="a" data-inset="true" id="list_data">
-        </ul>
         <!--End Searcg-->
 
         <script type="text/javascript" src="cordova.js"></script>
@@ -61,6 +63,7 @@
         <script type="text/javascript">
             app.initialize();
         </script>
+    </div>
 </body>
 
 </html>

@@ -21,3 +21,20 @@ function loadAllData() {
 $(window).on('load', function() {
     loadAllData()
 })
+$(document).ready(function() {
+    $('#form_rate').on('submit', function() {
+        const rate_data = {
+            res_name: $('#restaurant_name').val(),
+            res_type: $('#restaurant_type').val(),
+            res_datetime: $('#restaurant_date').val(),
+            res_averageprice: $('#avarage_price').val(),
+            res_service: $('#service_rate').val(),
+            res_clean: $('#cleanliness_rate').val(),
+            res_food: $('#food_rate').val(),
+            res_notes: $('#restaurant_note').val()
+        }
+
+        createFeedback("RestaurantDatabase", rate_data)
+        return false
+    })
+})
