@@ -22,7 +22,11 @@ $(window).on('load', function() {
     loadAllData()
 })
 $(document).ready(function() {
-    $('#form_rate').on('submit', function() {
+    $('#goHome').on('click', function() {
+        $('#list_data').empty()
+        loadAllData()
+    })
+    $(document).on('submit', '#form_rate', function() {
         const rate_data = {
             res_name: $('#restaurant_name').val(),
             res_type: $('#restaurant_type').val(),
@@ -33,7 +37,8 @@ $(document).ready(function() {
             res_food: $('#food_rate').val(),
             res_notes: $('#restaurant_note').val()
         }
-        createFeedback("RestaurantDatabase", rate_data)
+
+        createFeedback(rate_data)
         return false
     })
 })

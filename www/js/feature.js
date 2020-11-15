@@ -22,6 +22,10 @@ $(window).on('load', function() {
     loadAllData()
 })
 $(document).ready(function() {
+    $('#goHome').on('click', function() {
+        $('#list_data').empty()
+        loadAllData()
+    })
     $(document).on('submit', '#form_rate', function() {
         const rate_data = {
             res_name: $('#restaurant_name').val(),
