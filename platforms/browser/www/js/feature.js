@@ -33,7 +33,6 @@ $(document).ready(function() {
             res_food: $('#food_rate').val(),
             res_notes: $('#restaurant_note').val()
         }
-
         createFeedback("RestaurantDatabase", rate_data)
         return false
     })
