@@ -1,5 +1,5 @@
 const listRes = [{
-        res_name: 'Restaurant demo',
+        res_name: 'Sugar daddy 1',
         res_type: 'Demo',
         res_datetime: 'abc',
         res_averageprice: '300000',
@@ -9,7 +9,7 @@ const listRes = [{
         res_notes: ''
     },
     {
-        res_name: 'Restaurant demo',
+        res_name: 'Sugar daddy 2',
         res_type: 'Demo',
         res_datetime: 'abc',
         res_averageprice: '300000',
@@ -19,7 +19,7 @@ const listRes = [{
         res_notes: ''
     },
     {
-        res_name: 'Restaurant demo',
+        res_name: 'Sugar daddy 3',
         res_type: 'Demo',
         res_datetime: 'abc',
         res_averageprice: '300000',
@@ -29,7 +29,7 @@ const listRes = [{
         res_notes: ''
     },
     {
-        res_name: 'Restaurant demo',
+        res_name: 'Sugar daddy 4',
         res_type: 'Demo',
         res_datetime: 'abc',
         res_averageprice: '300000',
@@ -39,7 +39,7 @@ const listRes = [{
         res_notes: ''
     },
     {
-        res_name: 'Restaurant demo',
+        res_name: 'Sugar daddy 5',
         res_type: 'Demo',
         res_datetime: 'abc',
         res_averageprice: '300000',
@@ -49,7 +49,7 @@ const listRes = [{
         res_notes: ''
     },
     {
-        res_name: 'Restaurant demo',
+        res_name: 'Sugar daddy 6',
         res_type: 'Demo',
         res_datetime: 'abc',
         res_averageprice: '300000',
@@ -59,7 +59,7 @@ const listRes = [{
         res_notes: ''
     },
     {
-        res_name: 'Restaurant demo',
+        res_name: 'Sugar daddy 7',
         res_type: 'Demo',
         res_datetime: 'abc',
         res_averageprice: '300000',
@@ -69,7 +69,7 @@ const listRes = [{
         res_notes: ''
     },
     {
-        res_name: 'Restaurant demo',
+        res_name: 'Sugar daddy 8',
         res_type: 'Demo',
         res_datetime: 'abc',
         res_averageprice: '300000',
