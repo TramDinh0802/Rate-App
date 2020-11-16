@@ -9,7 +9,7 @@ function loadAllData() {
             <div class="caption">
                 <h3><a href="#">${data[i].res_name}</a></h3>
                 <button id="delete" feedbackId = "${data[i].id}" class="btn btn-danger">Delete</button>
-                <button id="detail" class="btn btn-primary" feedbackId = "${data[i].id}" >See Details</button>
+                <button id="detail" class="btn btn-primary" feedbackId = "${data[i].id}" type="button" data-toggle="modal" data-target="#detail1" >See Details</button>
             </div>
         </div>
         </div>`
@@ -42,27 +42,52 @@ $(document).ready(function() {
         createFeedback(rate_data)
         return false
     })
-    $(document).on('click', '#delete', function(){
+    $(document).on('click', '#delete', function() {
         const feedbackId = $(this).attr('feedbackId')
         const result = deleteFeedback(feedbackId)
 
-        result.onsuccess = function () {
+        result.onsuccess = function() {
             alert("Delete Feedback successfully")
             $('#list_data').empty()
             loadAllData()
         }
-        result.onerror = function () {
+        result.onerror = function() {
             alert("Delete Feedback failed")
         }
     })
-    $(document).on('click', '#detail', function(){
+    $(document).on('click', '#detail', function() {
         const feedbackId = $(this).attr('feedbackId')
         const result = getDetail(feedbackId)
-        result.onsuccess = function (event){
+        result.onsuccess = function(event) {
             const feedback = event.target.result
-            console.log(feedback)
+            const html = `
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">${feedback.res_name}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>AVG Price: ${feedback.res_averageprice}</h5>
+                        <h5>Type: ${feedback.res_type}</h5>                 
+                        <h5>Date & Time of Visit: ${feedback.res_datetime}</h5>
+                        <p>Service: ${feedback.res_service}</p>
+                        <p>Clean: ${feedback.res_clean}</p>
+                        <p>Food: ${feedback.res_food}</p>
+                        <p>Date & Time or Review: ${feedback.res_datetime}
+                        <p>Notes: ${feedback.res_notes}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+            `
+            $('#detail1').empty().append(html)
         }
-        result.onerror = function (){
+        result.onerror = function() {
             alert("Can't get detail")
         }
     })
