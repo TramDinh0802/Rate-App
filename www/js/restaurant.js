@@ -113,3 +113,7 @@ function createFeedback(feedback) {
         alert("create feedback fail")
     }
 }
+function deleteFeedback(feedbackId) {
+    feedbackId = Number(feedbackId)
+    return db.transaction(["RestaurantDatabase"], "readwrite").objectStore("RestaurantDatabase").delete(feedbackId)
+}

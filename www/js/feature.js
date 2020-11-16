@@ -8,7 +8,8 @@ function loadAllData() {
         <div class="thumbnail product-box">
             <div class="caption">
                 <h3><a href="#">${data[i].res_name}</a></h3>
-                <p><a href="feedback.html" class="btn btn-success" role="button">Feedback</a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
+                <button id="delete" feedbackId = "${data[i].id}" class="btn btn-danger">Delete</button>
+                <a href="#" class="btn btn-primary" role="button">See Details</a>
             </div>
         </div>
         </div>`
@@ -40,5 +41,18 @@ $(document).ready(function() {
 
         createFeedback(rate_data)
         return false
+    })
+    $(document).on('click', '#delete', function(){
+        const feedbackId = $(this).attr('feedbackId')
+        const result = deleteFeedback(feedbackId)
+
+        result.onsuccess = function () {
+            alert("Delete Feedback successfully")
+            $('#list_data').empty()
+            loadAllData()
+        }
+        result.onerror = function () {
+            alert("Delete Feedback failed")
+        }
     })
 })

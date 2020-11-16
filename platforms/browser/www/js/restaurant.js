@@ -105,9 +105,15 @@ function getAllData(collectionName) {
 function createFeedback(feedback) {
     const request = db.transaction(["RestaurantDatabase"], "readwrite").objectStore("RestaurantDatabase").add(feedback)
     request.onsuccess = function(event) {
+        $('#list_data').empty()
+        loadAllData()
         alert("Create feedback successfully")
     }
     request.onerror = function(event) {
         alert("create feedback fail")
     }
+}
+function deleteFeedback(feedbackId) {
+    feedbackId = Number(feedbackId)
+    return db.transaction(["RestaurantDatabase"], "readwrite").objectStore("RestaurantDatabase").delete(feedbackId)
 }
