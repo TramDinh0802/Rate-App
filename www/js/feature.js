@@ -9,7 +9,7 @@ function loadAllData() {
             <div class="caption">
                 <h3><a href="#">${data[i].res_name}</a></h3>
                 <button id="delete" feedbackId = "${data[i].id}" class="btn btn-danger">Delete</button>
-                <a href="#" class="btn btn-primary" role="button">See Details</a>
+                <button id="detail" class="btn btn-primary" feedbackId = "${data[i].id}" >See Details</button>
             </div>
         </div>
         </div>`
@@ -53,6 +53,17 @@ $(document).ready(function() {
         }
         result.onerror = function () {
             alert("Delete Feedback failed")
+        }
+    })
+    $(document).on('click', '#detail', function(){
+        const feedbackId = $(this).attr('feedbackId')
+        const result = getDetail(feedbackId)
+        result.onsuccess = function (event){
+            const feedback = event.target.result
+            console.log(feedback)
+        }
+        result.onerror = function (){
+            alert("Can't get detail")
         }
     })
 })
