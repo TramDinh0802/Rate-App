@@ -8,6 +8,7 @@ function loadAllData() {
         <div class="thumbnail product-box">
             <div class="caption">
                 <h3><a href="#">${data[i].res_name}</a></h3>
+                <p>Average Rating: <span>${parseFloat((Number(data[i].res_food) + Number(data[i].res_clean) + Number(data[i].res_service))/3).toFixed(1)}</p>
                 <button id="delete" feedbackId = "${data[i].id}" class="btn btn-danger">Delete</button>
                 <button id="detail" class="btn btn-primary" feedbackId = "${data[i].id}" type="button" data-toggle="modal" data-target="#detail1" >See Details</button>
             </div>
@@ -76,6 +77,7 @@ $(document).ready(function() {
                         <p>Service: ${feedback.res_service}</p>
                         <p>Clean: ${feedback.res_clean}</p>
                         <p>Food: ${feedback.res_food}</p>
+                        <p>Average Rating: <span>${parseFloat((Number(feedback.res_food) + Number(feedback.res_clean) + Number(feedback.res_service))/3).toFixed(1)}</p>
                         <p>Date & Time or Review: ${feedback.res_datetime}
                         <p>Notes: ${feedback.res_notes}</p>
                     </div>
